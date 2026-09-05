@@ -1,0 +1,879 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+/* =========================================================
+   ROOT VARIABLES
+   ========================================================= */
+
+:root {
+  --hof-charcoal: #111827;
+  --hof-gold: #c79a3d;
+  --hof-gold-dark: #b08532;
+  --hof-ivory: #f7f5f2;
+  --hof-blush: #e8b7b7;
+
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-menu: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Prevent focus outline from disappearing */
+:focus-visible {
+  outline: 2px solid var(--hof-gold);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+#navbar {
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base),
+    top var(--transition-base),
+    left var(--transition-base),
+    width var(--transition-base),
+    max-width var(--transition-base),
+    border-radius var(--transition-base),
+    transform var(--transition-base);
+}
+
+/*
+ * Navbar state after scrolling.
+ * This intentionally preserves your existing design.
+ */
+
+.navbar-scrolled {
+  background-color: rgba(247, 245, 242, 0.95);
+  box-shadow: var(--shadow-sm);
+
+  top: 0;
+  left: 0;
+  transform: none;
+
+  width: 100%;
+  max-width: none;
+
+  border-radius: 0;
+}
+
+
+/* =========================================================
+   HAMBURGER MENU
+   ========================================================= */
+
+#menu-toggle {
+  width: 30px;
+  height: 24px;
+
+  position: relative;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+#menu-toggle span {
+  display: block;
+
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background-color: var(--hof-charcoal);
+
+  border-radius: 3px;
+
+  opacity: 1;
+
+  transition:
+    top 0.25s ease-in-out,
+    transform 0.25s ease-in-out,
+    opacity 0.2s ease-in-out,
+    background-color 0.25s ease-in-out,
+    left 0.25s ease-in-out;
+}
+
+#menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+#menu-toggle span:nth-child(2) {
+  top: 10px;
+}
+
+#menu-toggle span:nth-child(3) {
+  top: 20px;
+}
+
+
+/* Active hamburger → X */
+
+#menu-toggle.is-active span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+  background-color: var(--hof-ivory);
+}
+
+#menu-toggle.is-active span:nth-child(2) {
+  left: -30px;
+  opacity: 0;
+}
+
+#menu-toggle.is-active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+  background-color: var(--hof-ivory);
+}
+
+
+/* =========================================================
+   FULL-SCREEN MOBILE MENU
+   ========================================================= */
+
+#menu-overlay {
+  /*
+   * Closed state.
+   * Keep the circular reveal animation from the original design.
+   */
+  clip-path: circle(
+    0% at calc(100% - 40px) 40px
+  );
+
+  transition:
+    clip-path var(--transition-menu);
+
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#menu-overlay.is-open {
+  clip-path: circle(
+    150% at calc(100% - 40px) 40px
+  );
+
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   MOBILE MENU LINKS
+   ========================================================= */
+
+#menu-overlay nav a,
+#menu-overlay nav > div {
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+#menu-overlay.is-open nav a,
+#menu-overlay.is-open nav > div {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* =========================================================
+   STAGGERED MENU ANIMATION
+   ========================================================= */
+
+#menu-overlay.is-open nav a:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+#menu-overlay.is-open nav a:nth-child(2) {
+  transition-delay: 0.20s;
+}
+
+#menu-overlay.is-open nav a:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+#menu-overlay.is-open nav a:nth-child(4) {
+  transition-delay: 0.30s;
+}
+
+#menu-overlay.is-open nav a:nth-child(5) {
+  transition-delay: 0.35s;
+}
+
+#menu-overlay.is-open nav a:nth-child(6) {
+  transition-delay: 0.40s;
+}
+
+#menu-overlay.is-open nav > div {
+  transition-delay: 0.45s;
+}
+
+
+/* =========================================================
+   MOBILE DROPDOWN
+   ========================================================= */
+
+#mobile-dropdown {
+  overflow: hidden;
+}
+
+#mobile-dropdown-toggle {
+  cursor: pointer;
+}
+
+#mobile-dropdown-toggle svg {
+  transition: transform var(--transition-base);
+}
+
+#mobile-dropdown-toggle.is-open svg {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   PROJECT / COLLECTION SLIDER
+   ========================================================= */
+
+/*
+ * The project slider is horizontally scrollable.
+ * Swiper can still control the slides while these styles
+ * preserve the original card sizing and spacing.
+ */
+
+/* =========================================================
+   PROJECT / COLLECTION SLIDER
+   ========================================================= */
+
+.collections-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.collections-slider .swiper-wrapper {
+    display: flex !important;
+
+    width: max-content;
+    min-width: 100%;
+
+    gap: 1.5rem;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 1rem 1.5rem;
+
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.collections-slider .swiper-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.collections-slider .swiper-slide {
+    flex: 0 0 calc(
+        (100vw - 3rem - 1.5rem) / 2
+    );
+
+    width: calc(
+        (100vw - 3rem - 1.5rem) / 2
+    );
+
+    max-width: 24rem;
+
+    scroll-snap-align: start;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 768px) {
+    .collections-slider .swiper-slide {
+        /*
+         * Exactly two cards visible.
+         */
+
+        flex: 0 0 calc(
+            (100% - 1.5rem) / 2
+        );
+
+        width: calc(
+            (100% - 1.5rem) / 2
+        );
+
+        max-width: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+    .collections-slider .swiper-slide {
+        /*
+         * One card + a small preview of next card.
+         */
+
+        flex: 0 0 85vw;
+
+        width: 85vw;
+    }
+
+    .collections-slider .swiper-wrapper {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
+/* =========================================================
+   PROJECT ARROWS
+   ========================================================= */
+
+.scroll-btn {
+    position: absolute;
+
+    top: 55%;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #c79a3d;
+    color: #ffffff;
+
+    font-size: 18px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.15);
+
+    transform: translateY(-50%);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.scroll-btn:hover:not(:disabled) {
+    background-color: #b08532;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.scroll-btn:active:not(:disabled) {
+    transform:
+        translateY(-50%)
+        scale(0.96);
+}
+
+.scroll-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* LEFT */
+
+.left-btn {
+    left: 1.5rem;
+}
+
+
+/* RIGHT */
+
+.right-btn {
+    right: 1.5rem;
+}
+
+
+/* =========================================================
+   MOBILE ARROWS
+   ========================================================= */
+
+@media (max-width: 767px) {
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
+
+        font-size: 16px;
+    }
+
+    .left-btn {
+        left: 0.75rem;
+    }
+
+    .right-btn {
+        right: 0.75rem;
+    }
+}
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.collections-slider .swiper-slide {
+  flex: 0 0 20rem;
+
+  width: 20rem;
+
+  scroll-snap-align: start;
+
+  transition:
+    transform var(--transition-base);
+}
+
+/*
+ * Prevent accidental card shrinking.
+ */
+
+.collections-slider .swiper-slide > * {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Desktop card width */
+
+@media (min-width: 768px) {
+  .collections-slider .swiper-slide {
+    flex: 0 0 24rem;
+    width: 24rem;
+  }
+}
+
+
+/* Optional subtle hover effect */
+
+.collections-slider .swiper-slide:hover {
+  transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   PROJECT SCROLL BUTTONS
+   ========================================================= */
+
+.scroll-btn {
+  position: absolute;
+
+  top: 55%;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--hof-gold);
+  color: #ffffff;
+
+  font-size: 18px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-50%);
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.scroll-btn:hover {
+  background-color: var(--hof-gold-dark);
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.scroll-btn:active {
+  transform:
+    translateY(-50%)
+    scale(0.96);
+}
+
+.scroll-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.left-btn {
+  left: 1.5rem;
+}
+
+.right-btn {
+  right: 1.5rem;
+}
+
+
+/* =========================================================
+   FANCYBOX
+   ========================================================= */
+
+.fancybox-caption {
+  background-color: rgba(17, 24, 39, 0.8);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-top: 1px solid var(--hof-gold);
+
+  color: var(--hof-ivory);
+
+  padding: 20px;
+
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MASONRY GALLERY
+   ========================================================= */
+
+.masonry-gallery {
+  column-count: 1;
+  column-gap: 1.5rem;
+
+  width: 100%;
+}
+
+.masonry-item {
+  display: inline-block;
+
+  width: 100%;
+
+  margin-bottom: 1.5rem;
+
+  break-inside: avoid;
+  page-break-inside: avoid;
+
+  vertical-align: top;
+}
+
+
+/* Tablet */
+
+@media (min-width: 768px) {
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+  .masonry-gallery {
+    column-count: 3;
+  }
+}
+
+
+/* =========================================================
+   LOGO SCROLLER
+   ========================================================= */
+
+.logo-scroller {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  /*
+   * Fade logos near both edges.
+   */
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.logo-scroller-inner {
+  display: flex;
+
+  width: max-content;
+
+  /*
+   * Continuous horizontal movement.
+   */
+
+  animation:
+    logo-scroll 30s linear infinite;
+
+  will-change: transform;
+}
+
+.logo-scroller-inner img {
+  flex: 0 0 auto;
+
+  height: 32px;
+
+  margin: 0 2.5rem;
+
+  object-fit: contain;
+
+  /*
+   * Prevent image dragging from interfering
+   * with the scrolling section.
+   */
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   LOGO ANIMATION
+   ========================================================= */
+
+@keyframes logo-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+
+/* =========================================================
+   IMAGE PERFORMANCE
+   ========================================================= */
+
+img {
+  max-width: 100%;
+}
+
+.masonry-item img,
+.collections-slider img {
+  display: block;
+}
+
+
+/* =========================================================
+   BUTTON / LINK INTERACTION
+   ========================================================= */
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   RESPONSIVE PROJECT CONTROLS
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+
+    font-size: 16px;
+  }
+
+  .left-btn {
+    left: 0.75rem;
+  }
+
+  .right-btn {
+    right: 0.75rem;
+  }
+
+  .collections-slider .swiper-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE DEVICES
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .collections-slider .swiper-slide {
+    flex-basis: 18rem;
+    width: 18rem;
+  }
+
+  .logo-scroller-inner img {
+    height: 28px;
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+/*
+ * Respect users who have requested reduced motion
+ * at OS/browser level.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
+  }
+
+  .logo-scroller-inner {
+    animation: none;
+  }
+
+  .collections-slider .swiper-wrapper {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* =========================================================
+   HIGH CONTRAST / ACCESSIBILITY
+   ========================================================= */
+
+@media (forced-colors: active) {
+  .scroll-btn {
+    border: 1px solid ButtonText;
+  }
+
+  #menu-toggle span {
+    background: ButtonText;
+  }
+}
+
+/* =========================================================
+   AOS SAFETY FALLBACK
+   ========================================================= */
+
+/*
+ * Prevent the entire portfolio from becoming invisible
+ * if AOS fails to initialize or its JavaScript is delayed.
+ */
+
+[data-aos] {
+  opacity: 1;
+  transform: none;
+}
+
+/*
+ * Let AOS take control when it is successfully initialized.
+ */
+
+.aos-init[data-aos] {
+  opacity: 0;
+}
+
+.aos-init.aos-animate[data-aos] {
+  opacity: 1;
+  transform: none;
+}

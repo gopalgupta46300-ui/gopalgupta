@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gopal ji Gupta - AI/ML & Data Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Gopal ji Gupta — AI/ML student and aspiring Data Analyst specializing in Python, SQL, data analysis, visualization and machine learning.">
+
+    <!-- Same libraries as the original design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <script src="sciprt.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hof-charcoal': '#111827',
+                        'hof-gold': '#C79A3D',
+                        'hof-ivory': '#F7F5F2',
+                        'hof-blush': '#E8B7B7'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Keep your original custom stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-hof-ivory text-hof-charcoal font-sans antialiased">
+
+    <!-- ===== Header / Navbar ===== -->
+    <header id="navbar"
+        class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl mx-auto rounded-full bg-hof-ivory/80 backdrop-blur-lg shadow-md transition-all duration-300 z-50">
+        <div class="flex justify-between items-center px-6 py-4">
+            <a href="#hero" class="text-2xl font-extrabold tracking-tight">
+                G<span class="text-hof-gold">.</span>G
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-hof-charcoal hover:text-hof-gold transition-colors">About</a>
+
+                <div class="relative group">
+                    <button type="button"
+                        class="flex items-center text-hof-charcoal hover:text-hof-gold transition-colors">
+                        Work
+                        <i data-lucide="chevron-down"
+                            class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 bg-hof-ivory rounded-lg shadow-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10 origin-top transform scale-95 group-hover:scale-100">
+                        <a href="#projects"
+                            class="block px-4 py-2 text-hof-charcoal hover:bg-hof-blush/50 rounded-md">Projects</a>
+                        <a href="#skills"
+                            class="block px-4 py-2 text-hof-charcoal hover:bg-hof-blush/50 rounded-md">Skills</a>
+                        <a href="#experience"
+                            class="block px-4 py-2 text-hof-charcoal hover:bg-hof-blush/50 rounded-md">Experience</a>
+                        <a href="#achievements"
+                            class="block px-4 py-2 text-hof-charcoal hover:bg-hof-blush/50 rounded-md">Achievements</a>
+                    </div>
+                </div>
+
+                <a href="#skills" class="text-hof-charcoal hover:text-hof-gold transition-colors">Skills</a>
+                <a href="#contact" class="text-hof-charcoal hover:text-hof-gold transition-colors">Contact</a>
+                <a href="assets/Resume.pdf" target="_blank" rel="noopener noreferrer"
+                    class="text-hof-charcoal hover:text-hof-gold transition-colors">Resume</a>
+            </nav>
+
+            <a href="#contact"
+                class="hidden md:inline-block px-5 py-2.5 bg-hof-gold text-white font-semibold rounded-full hover:bg-opacity-90 transition-all">
+                Let's Talk
+            </a>
+
+            <button type="button" id="menu-toggle" class="md:hidden" aria-label="Open menu" aria-controls="menu-overlay"
+                aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== Full Screen Overlay Menu ===== -->
+    <div id="menu-overlay" class="fixed inset-0 bg-hof-charcoal/95 z-40 flex items-center justify-center">
+        <nav class="flex flex-col items-center space-y-6 mt-10">
+            <a href="#about" class="text-xl font-bold text-hof-ivory hover:text-hof-gold transition-colors">About</a>
+            <div class="text-center">
+                <button type="button" id="mobile-dropdown-toggle" aria-controls="mobile-dropdown" aria-expanded="false"
+                    class="text-xl font-bold text-hof-ivory hover:text-hof-gold transition-colors flex items-center">
+                    Work <i data-lucide="chevron-down" class="w-8 h-8 ml-2"></i>
+                </button>
+                <div id="mobile-dropdown" class="hidden flex-col items-center space-y-4 mt-4">
+                    <a href="#projects" class="text-xl font-bold text-hof-ivory/80 hover:text-hof-gold">Projects</a>
+                    <a href="#skills" class="text-xl font-bold text-hof-ivory/80 hover:text-hof-gold">Skills</a>
+                    <a href="#experience" class="text-xl font-bold text-hof-ivory/80 hover:text-hof-gold">Experience</a>
+                    <a href="#achievements"
+                        class="text-xl font-bold text-hof-ivory/80 hover:text-hof-gold">Achievements</a>
+                </div>
+            </div>
+            <a href="#contact"
+                class="text-xl font-bold text-hof-ivory hover:text-hof-gold transition-colors">Contact</a>
+            <div class="flex space-x-6 pt-8">
+                <a href="https://github.com/gopalgupta46300-ui" target="_blank" rel="noopener noreferrer"
+                    class="text-hof-ivory hover:text-hof-gold"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="https://www.linkedin.com/in/gopal-gupta-a0a69a30a/" target="_blank" rel="noopener noreferrer"
+                    class="text-hof-ivory hover:text-hof-gold"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="mailto:gopaltgupta46300@gmail.com" class="text-hof-ivory hover:text-hof-gold"><i
+                        data-lucide="mail" class="w-6 h-6"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- ===== Hero Section ===== -->
+        <section id="hero" class="min-h-screen flex items-center pt-28">
+            <div class="container mx-auto px-6 grid md:grid-cols-12 items-center gap-12">
+                <div class="hero-content-left text-center md:text-left md:col-span-7" data-aos="fade-right">
+                    <span class="text-hof-gold font-semibold tracking-widest uppercase">AI/ML • Data • Problem
+                        Solving</span>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-hof-charcoal leading-tight mt-4">
+                        Turning Thinking
+                        <span class="block text-hof-gold">into Reality</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto md:mx-0">
+                        I'm Gopal ji Gupta, an AI/ML student and aspiring Data Analyst focused on Python, SQL,
+                        data visualization, machine learning, and building practical solutions from messy data.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-10 justify-center md:justify-start">
+                        <a href="#projects" data-scroll
+                            class="inline-block px-10 py-4 bg-hof-gold text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            View My Work
+                        </a>
+                        <a href="#contact" data-scroll
+                            class="inline-block px-10 py-4 bg-white text-hof-charcoal text-lg font-semibold rounded-full shadow-lg border border-gray-200 hover:border-hof-gold transition-all">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-content-right md:col-span-5 h-[55vh] md:h-[70vh] relative" data-aos="fade-left"
+                    data-aos-delay="100">
+                    <div class="w-full h-full rounded-3xl shadow-2xl overflow-hidden relative bg-hof-charcoal">
+                        <img src="assets/Gopal.jpeg" alt="Gopal ji Gupta"
+                            class="w-full h-full object-cover object-[center_25%] rounded-3xl shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span
+                                class="inline-block px-4 py-1.5 rounded-full bg-hof-gold/90 text-sm font-semibold">AI/ML
+                                • Data Analytics</span>
+                        </div>
+                    </div>
+                    <!-- <div class="absolute -bottom-8 -left-8 w-48 h-32 md:w-56 md:h-40 bg-hof-gold rounded-2xl shadow-xl border-4 border-hof-ivory flex items-center justify-center"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-white text-center"><i data-lucide="database"
+                                class="w-9 h-9 mx-auto mb-2"></i><span class="font-bold">Data → Insight</span></div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== About Section ===== -->
+        <section id="about" class="py-24 bg-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <div
+                        class="rounded-3xl shadow-xl w-full h-[520px] bg-hof-charcoal relative overflow-hidden flex items-center justify-center">
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(135deg,transparent_0%,rgba(199,154,61,.22)_45%,transparent_46%,transparent_100%)]">
+                        </div>
+                        <div class="relative text-center text-white p-8">
+                            <div class="text-8xl font-extrabold text-hof-gold">G</div>
+                            <div class="text-2xl font-semibold mt-3">Gopal ji Gupta</div>
+                            <div class="text-gray-300 mt-2">AI/ML • Data Analytics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <span class="text-hof-gold font-semibold tracking-widest uppercase">About Me</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal mt-2">Curious by Nature. Analytical by
+                        Practice.</h2>
+                    <p class="mt-6 text-gray-600 text-lg">
+                        I'm pursuing a B.Tech in Artificial Intelligence and Machine Learning and building a strong
+                        foundation
+                        across data analysis, programming, machine learning, and problem solving.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        My focus is practical: understand the problem, work with the data, find the signal, and turn the
+                        result
+                        into something people can actually use.
+                    </p>
+
+                    <div id="counters" class="grid grid-cols-3 gap-4 mt-10 text-center">
+                        <div><span class="counter-value text-5xl font-bold text-hof-gold"
+                                data-target="150">0</span><span class="block text-sm text-gray-500 mt-1">DSA
+                                Problems</span></div>
+                        <div><span class="counter-value text-5xl font-bold text-hof-gold" data-target="5">0</span><span
+                                class="block text-sm text-gray-500 mt-1">Core Skills</span></div>
+                        <div><span class="counter-value text-5xl font-bold text-hof-gold" data-target="3">0</span><span
+                                class="block text-sm text-gray-500 mt-1">Focus Areas</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Projects Section ===== -->
+        <section id="projects" class="py-24 bg-hof-ivory relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal text-center" data-aos="fade-up">Featured
+                    Projects</h2>
+                <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto mt-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    A portfolio built around data, automation, machine learning, and practical problem solving.
+                </p>
+            </div>
+
+            <!-- Scroll Buttons -->
+            <!-- <button type="button" class="scroll-btn left-btn" id="scrollLeft" aria-label="Previous projects">
+                ←
+            </button>
+
+            <button type="button" class="scroll-btn right-btn" id="scrollRight" aria-label="Next projects">
+                →
+            </button> -->
+
+            <!-- <button type="button" class="scroll-btn left-btn" id="scrollLeft"
+                aria-label="Previous project">&#10094;</button>
+            <button type="button" class="scroll-btn right-btn" id="scrollRight"
+                aria-label="Next project">&#10095;</button> -->
+
+            <div class="swiper-container collections-slider mt-12" data-aos="fade-up" data-aos-delay="200">
+                <!-- ADDED id="projectsTrack" HERE -->
+
+                <div class="swiper-wrapper py-8 px-6" id="projectsTrack">
+
+                    <div class="swiper-slide">
+                        <div
+                            class="rounded-2xl shadow-lg overflow-hidden group relative transform transition-transform duration-300 h-full min-h-[420px] bg-white">
+                            <div class="relative h-full p-8 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-hof-gold text-sm font-semibold uppercase tracking-widest">•
+                                        Machine Learning</span>
+                                    <h3 class="text-3xl font-bold mt-3">Predictive ML Pipeline</h3>
+                                    <p class="text-gray-600 mt-4">A structured workflow covering data cleaning, feature
+                                        engineering, model training, evaluation and interpretation.</p>
+                                </div>
+                                <div>
+                                    <div class="flex flex-wrap gap-2 mb-5">
+                                        <span class="px-3 py-1 rounded-full bg-hof-ivory text-sm">Python</span>
+                                        <span class="px-3 py-1 rounded-full bg-hof-ivory text-sm">Pandas</span>
+                                        <span class="px-3 py-1 rounded-full bg-hof-ivory text-sm">Scikit-learn</span>
+                                    </div>
+                                    <a href="#contact"
+                                        class="inline-flex items-center gap-2 px-5 py-2 bg-hof-gold text-white rounded-full font-semibold">Discuss
+                                        Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div
+                            class="rounded-2xl shadow-lg overflow-hidden group relative transform transition-transform duration-300 h-full min-h-[420px] bg-hof-blush/40">
+                            <div class="relative h-full p-8 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-hof-gold text-sm font-semibold uppercase tracking-widest">• AI
+                                        Systems</span>
+                                    <h3 class="text-3xl font-bold mt-3">Document-Grounded RAG Chatbot</h3>
+                                    <p class="text-gray-600 mt-4">An AI assistant that answers questions strictly from
+                                        uploaded documents, with source citations and built-in hallucination guardrails.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="flex flex-wrap gap-2 mb-5">
+                                        <span class="px-3 py-1 rounded-full bg-white/70 text-sm">LLM Inference</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/70 text-sm">Embedding</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/70 text-sm">Retrieval</span>
+                                    </div>
+                                    <a href="#contact"
+                                        class="inline-flex items-center gap-2 px-5 py-2 bg-hof-gold text-white rounded-full font-semibold">Discuss
+                                        Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Agentic AI Workflow -->
+                    <div class="swiper-slide">
+                        <div
+                            class="rounded-2xl shadow-lg overflow-hidden group relative transform transition-transform duration-300 h-full min-h-[420px] bg-hof-charcoal">
+                            <div
+                                class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(199,154,61,.35),transparent_45%)]">
+                            </div>
+                            <div class="relative h-full p-8 flex flex-col justify-between text-white">
+                                <div>
+                                    <span class="text-hof-gold text-sm font-semibold uppercase tracking-widest">•
+                                        Agentic AI</span>
+                                    <h3 class="text-3xl font-bold mt-3">Autonomous Multi-Agent Research System</h3>
+                                    <p class="text-gray-300 mt-4">An agentic workflow using LangGraph where specialized
+                                        agents collaborate to perform web research, critique findings, and synthesize
+                                        technical reports autonomously.</p>
+                                </div>
+                                <div>
+                                    <div class="flex flex-wrap gap-2 mb-5">
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">LangGraph</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">CrewAI</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Tavily API</span>
+                                    </div>
+                                    <a href="#contact"
+                                        class="inline-flex items-center gap-2 px-5 py-2 bg-hof-gold rounded-full font-semibold">Discuss
+                                        Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Enterprise Hybrid RAG System -->
+                    <div class="swiper-slide">
+                        <div
+                            class="rounded-2xl shadow-lg overflow-hidden group relative transform transition-transform duration-300 h-full min-h-[420px] bg-white">
+                            <div class="relative h-full p-8 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-hof-gold text-sm font-semibold uppercase tracking-widest">•
+                                        Advanced RAG</span>
+                                    <h3 class="text-3xl font-bold mt-3">Enterprise Hybrid RAG Engine</h3>
+                                    <p class="text-gray-600 mt-4">A production-grade RAG pipeline featuring hybrid
+                                        search (dense embeddings + sparse BM25), semantic chunking, and cross-encoder
+                                        re-ranking for accurate document retrieval.</p>
+                                </div>
+                                <div>
+                                    <div class="flex flex-wrap gap-2 mb-5">
+                                        <span class="px-3 py-1 rounded-full bg-hof-ivory text-sm">Pinecone</span>
+                                        <span class="px-3 py-1 rounded-full bg-hof-ivory text-sm">LlamaIndex</span>
+                                        <span class="px-3 py-1 rounded-full bg-hof-ivory text-sm">Qdrant</span>
+                                    </div>
+                                    <a href="#contact"
+                                        class="inline-flex items-center gap-2 px-5 py-2 bg-hof-gold text-white rounded-full font-semibold">Discuss
+                                        Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card: Fine-Tuned Domain LLM -->
+                    <!-- <div class="swiper-slide">
+                        <div
+                            class="rounded-2xl shadow-lg overflow-hidden group relative transform transition-transform duration-300 h-full min-h-[420px] bg-hof-blush/40">
+                            <div class="relative h-full p-8 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-hof-gold text-sm font-semibold uppercase tracking-widest">• LLM
+                                        Fine-Tuning</span>
+                                    <h3 class="text-3xl font-bold mt-3">Domain-Specific LLM Fine-Tuner</h3>
+                                    <p class="text-gray-600 mt-4">Fine-tuned open-source LLMs (Llama 3 / Mistral) using
+                                        QLoRA and PEFT techniques on custom datasets to run efficient, domain-specific
+                                        chat inference locally.</p>
+                                </div>
+                                <div>
+                                    <div class="flex flex-wrap gap-2 mb-5">
+                                        <span class="px-3 py-1 rounded-full bg-white/70 text-sm">Unsloth</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/70 text-sm">QLoRA</span>
+                                        <span class="px-3 py-1 rounded-full bg-white/70 text-sm">Hugging Face</span>
+                                    </div>
+                                    <a href="#contact"
+                                        class="inline-flex items-center gap-2 px-5 py-2 bg-hof-gold text-white rounded-full font-semibold">Discuss
+                                        Project <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Skills Section ===== -->
+        <section id="skills" class="pt-24 pb-32 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal text-center" data-aos="fade-up">Technical
+                    Skills</h2>
+                <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto mt-4" data-aos="fade-up"
+                    data-aos-delay="100">
+                    Tools I use to move from raw data and ideas to working solutions.
+                </p>
+
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-8 rounded-2xl shadow-lg bg-hof-ivory"><i data-lucide="code-2"
+                            class="w-9 h-9 text-hof-gold"></i>
+                        <h3 class="text-2xl font-bold mt-5">Programming</h3>
+                        <p class="mt-3 text-gray-600">Python, C++, problem solving, functions, loops and algorithmic
+                            thinking.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl shadow-lg bg-hof-ivory"><i data-lucide="database"
+                            class="w-9 h-9 text-hof-gold"></i>
+                        <h3 class="text-2xl font-bold mt-5">Data</h3>
+                        <p class="mt-3 text-gray-600">SQL, data cleaning, exploratory analysis, feature preparation and
+                            structured querying.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl shadow-lg bg-hof-ivory"><i data-lucide="bar-chart-3"
+                            class="w-9 h-9 text-hof-gold"></i>
+                        <h3 class="text-2xl font-bold mt-5">AI Systems</h3>
+                        <p class="mt-3 text-gray-600">Build the NLP, LLMs and trained AI models.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl shadow-lg bg-hof-ivory"><i data-lucide="brain-circuit"
+                            class="w-9 h-9 text-hof-gold"></i>
+                        <h3 class="text-2xl font-bold mt-5">Machine Learning</h3>
+                        <p class="mt-3 text-gray-600">Supervised learning, model evaluation, preprocessing and practical
+                            ML workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Experience / Process Section ===== -->
+        <section id="experience" class="pt-32 pb-32 bg-hof-blush/30">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal text-center" data-aos="fade-up">How I Work
+                </h2>
+                <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto mt-4" data-aos="fade-up"
+                    data-aos-delay="100">From unclear questions to measurable answers.</p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                    <div class="bg-white p-10 rounded-2xl shadow-lg text-center" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="inline-block p-4 bg-hof-gold/10 rounded-full"><i data-lucide="search"
+                                class="w-8 h-8 text-hof-gold"></i></div>
+                        <h3 class="text-2xl font-bold mt-5">1. Understand</h3>
+                        <p class="mt-3 text-gray-600">Define the problem, constraints, objective and what a useful
+                            result actually means.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-2xl shadow-lg text-center" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <div class="inline-block p-4 bg-hof-gold/10 rounded-full"><i data-lucide="database"
+                                class="w-8 h-8 text-hof-gold"></i></div>
+                        <h3 class="text-2xl font-bold mt-5">2. Prepare</h3>
+                        <p class="mt-3 text-gray-600">Clean, explore and structure the data before drawing conclusions
+                            or training models.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-2xl shadow-lg text-center" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <div class="inline-block p-4 bg-hof-gold/10 rounded-full"><i data-lucide="cpu"
+                                class="w-8 h-8 text-hof-gold"></i></div>
+                        <h3 class="text-2xl font-bold mt-5">3. Build</h3>
+                        <p class="mt-3 text-gray-600">Choose appropriate analytical, statistical or machine-learning
+                            techniques and test them.</p>
+                    </div>
+                    <div class="bg-white p-10 rounded-2xl shadow-lg text-center" data-aos="fade-up"
+                        data-aos-delay="500">
+                        <div class="inline-block p-4 bg-hof-gold/10 rounded-full"><i data-lucide="lightbulb"
+                                class="w-8 h-8 text-hof-gold"></i></div>
+                        <h3 class="text-2xl font-bold mt-5">4. Explain</h3>
+                        <p class="mt-3 text-gray-600">Translate technical results into clear insights, decisions and
+                            next actions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Achievements Section ===== -->
+        <section id="achievements" class="py-24 bg-white">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal text-center">What I'm Building</h2>
+                <div class="max-w-4xl mx-auto mt-12 grid md:grid-cols-3 gap-6">
+                    <div class="rounded-2xl p-8 bg-hof-ivory shadow-lg"><i data-lucide="graduation-cap"
+                            class="w-8 h-8 text-hof-gold"></i>
+                        <h3 class="text-xl font-bold mt-5">AI/ML Foundation</h3>
+                        <p class="mt-3 text-gray-600">Developing strong fundamentals in artificial intelligence, machine
+                            learning and data analysis.</p>
+                    </div>
+                    <div class="rounded-2xl p-8 bg-hof-ivory shadow-lg"><i data-lucide="trending-up"
+                            class="w-8 h-8 text-hof-gold"></i>
+                        <h3 class="text-xl font-bold mt-5">Continuous Practice</h3>
+                        <p class="mt-3 text-gray-600">Tracking problem-solving progress and improving accuracy, patterns
+                            and implementation quality.</p>
+                    </div>
+                    <div class="rounded-2xl p-8 bg-hof-ivory shadow-lg"><i data-lucide="rocket"
+                            class="w-8 h-8 text-hof-gold"></i>
+                        <h3 class="text-xl font-bold mt-5">Real Projects</h3>
+                        <p class="mt-3 text-gray-600">Moving beyond tutorials by turning concepts into practical,
+                            portfolio-ready projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact Section ===== -->
+        <section id="contact" class="py-24 bg-hof-ivory">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-hof-charcoal text-center">Let's Build Something Useful
+                </h2>
+                <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto mt-4">Have a project, internship
+                    opportunity, collaboration or data problem? <br>Let's talk.</p>
+
+
+                <!-- ------------------ -->
+                <form id="form" action="https://api.web3forms.com/submit" method="POST"
+                    class="max-w-lg mx-auto mt-12 space-y-6">
+
+                    <!-- Web3Forms API Key -->
+                    <input type="hidden" name="access_key" value="92aa1bfb-ac7c-443c-aa81-85ead25b4603">
+
+                    <div>
+
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">
+                                Name
+                            </label>
+
+                            <input type="text" id="name" name="name" placeholder="Your Name" required
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-hof-gold focus:border-hof-gold">
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">
+                                Email
+                            </label>
+
+                            <input type="email" id="email" name="email" placeholder="Your Email" required
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-hof-gold focus:border-hof-gold">
+                        </div>
+
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">
+                            Message
+                        </label>
+
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-hof-gold focus:border-hof-gold"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+
+                        <button type="submit"
+                            class="inline-block mt-4 px-12 py-4 bg-hof-gold text-white text-lg font-semibold rounded-full shadow-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+
+                            Send Message
+
+                        </button>
+
+                    </div>
+
+                </form>
+                <!-- -------------------- -->
+
+                <div class="text-center mt-16">
+                    <p class="text-gray-600">Or reach out directly:</p>
+                    <a href="mailto:gopalgupta46300@gmail.com"
+                        class="text-2xl font-semibold text-hof-charcoal hover:text-hof-gold transition-colors mt-2 block">gopalgupta46300@gmail.com</a>
+                    <div class="flex justify-center gap-4 mt-6">
+                        <a href="https://github.com/gopalgupta46300-ui" target="_blank"
+                            class="flex items-center gap-2 px-6 py-3 bg-hof-charcoal text-white font-medium rounded-full shadow-md hover:bg-black transition-colors"><i
+                                data-lucide="github" class="w-5 h-5"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/gopal-gupta-a0a69a30a/" target="_blank"
+                            class="flex items-center gap-2 px-6 py-3 bg-white text-hof-charcoal font-medium rounded-full shadow-md hover:bg-gray-50 transition-colors border border-gray-200"><i
+                                data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-hof-charcoal text-hof-ivory pt-16 relative">
+        <div class="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-full h-[60px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 L0,20 Q600,100 1200,20 L1200,0 Z" class="fill-white"></path>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 pb-16">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Gopal ji Gupta</h4>
+                    <p class="text-gray-400 max-w-sm">AI/ML student and aspiring Data Analyst focused on turning data
+                        into useful decisions.</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <nav class="grid grid-cols-2 gap-2">
+                        <a href="#about" class="hover:text-hof-gold">About</a>
+                        <a href="#projects" class="hover:text-hof-gold">Projects</a>
+                        <a href="#skills" class="hover:text-hof-gold">Skills</a>
+                        <a href="#experience" class="hover:text-hof-gold">Experience</a>
+                        <a href="#achievements" class="hover:text-hof-gold">Achievements</a>
+                        <a href="#contact" class="hover:text-hof-gold">Contact</a>
+                        <p class="hover:text-hof-gold">+91 80528 01066</p>
+                    </nav>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Currently Learning</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">Python</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">SQL</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">ML</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-sm">C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-700 py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <span class="text-gray-400 text-sm">© <span id="current-year"></span> Gopal ji Gupta. All Rights
+                    Reserved.</span>
+                <div class="flex flex-col gap-3 mt-4 md:mt-0">
+
+                    <a href="https://github.com/gopalgupta46300-ui" class="text-gray-400 hover:text-hof-gold">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+
+                    <a href="#" class="text-gray-400 hover:text-hof-gold">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+
+                    <a href="mailto:gopalgupta46300@gmail.com"
+                        class="text-gray-400 hover:text-hof-gold flex items-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>gopalgupta46300@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#hero" data-scroll id="scrollTopBtn"
+        class="fixed bottom-8 right-8 z-50 p-4 bg-hof-gold text-white rounded-full shadow-lg transition-all duration-300 opacity-0 invisible transform hover:scale-110 hover:shadow-xl">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
+
+    <script src="sciprt.js" defer></script>
+
+</body>
+
+</html>
