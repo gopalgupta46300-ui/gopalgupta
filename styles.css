@@ -14,13 +14,21 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-html {
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
   overflow-x: hidden;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  overflow-x: hidden;
   font-family: 'Inter', sans-serif;
 }
 
@@ -143,34 +151,48 @@ body {
 #mobile-dropdown-toggle svg { transition: transform var(--transition-base); }
 #mobile-dropdown-toggle.is-open svg { transform: rotate(180deg); }
 
+#projects {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0.5rem;
+}
+
 .collections-slider {
   position: relative;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 
+#projectsTrack,
 .collections-slider .swiper-wrapper {
   display: flex !important;
-  gap: 1.5rem;
+  align-items: stretch;
+  gap: 1rem;
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1.25rem;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
+  flex-wrap: nowrap;
 }
 
+#projectsTrack::-webkit-scrollbar,
 .collections-slider .swiper-wrapper::-webkit-scrollbar {
   display: none;
 }
 
+#projectsTrack > .swiper-slide,
 .collections-slider .swiper-slide {
-  flex: 0 0 80%;
-  width: 80%;
-  max-width: 24rem;
+  flex: 0 0 auto;
+  width: 85vw;
+  max-width: 22rem;
+  min-width: 0;
   scroll-snap-align: start;
   transition: transform 0.3s ease;
 }
@@ -185,19 +207,23 @@ body {
 }
 
 @media (min-width: 768px) {
+  #projectsTrack > .swiper-slide,
   .collections-slider .swiper-slide {
-    flex: 0 0 calc((100% - 1.5rem) / 2);
-    width: calc((100% - 1.5rem) / 2);
-    max-width: none;
+    width: 45%;
+    max-width: 26rem;
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
+  #projectsTrack > .swiper-slide,
   .collections-slider .swiper-slide {
-    flex: 0 0 85vw;
-    width: 85vw;
+    width: 30%;
+    max-width: 24rem;
   }
+}
 
+@media (max-width: 480px) {
+  #projectsTrack,
   .collections-slider .swiper-wrapper {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -206,7 +232,7 @@ body {
 
 .scroll-btn {
   position: absolute;
-  top: 55%;
+  top: 50%;
   width: 44px;
   height: 44px;
   display: flex;
@@ -241,8 +267,8 @@ body {
   cursor: not-allowed;
 }
 
-.left-btn { left: 1.5rem; }
-.right-btn { right: 1.5rem; }
+.left-btn { left: 0.5rem; }
+.right-btn { right: 0.5rem; }
 
 @media (max-width: 767px) {
   .scroll-btn {
@@ -251,8 +277,14 @@ body {
     font-size: 16px;
   }
 
-  .left-btn { left: 0.75rem; }
-  .right-btn { right: 0.75rem; }
+  .left-btn { left: 0.5rem; }
+  .right-btn { right: 0.5rem; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .scroll-btn {
+    display: none;
+  }
 }
 
 .fancybox-caption {
@@ -335,11 +367,6 @@ button {
 }
 
 @media (max-width: 480px) {
-  .collections-slider .swiper-slide {
-    flex-basis: 18rem;
-    width: 18rem;
-  }
-
   .logo-scroller-inner img {
     height: 28px;
     margin-left: 1.75rem;
@@ -358,6 +385,7 @@ button {
   }
 
   .logo-scroller-inner { animation: none; }
+  #projectsTrack,
   .collections-slider .swiper-wrapper { scroll-behavior: auto; }
 }
 
