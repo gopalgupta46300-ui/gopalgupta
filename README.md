@@ -1,10 +1,6 @@
 # Gopal ji Gupta
 
 <p align="center">
-  <img src="https://gopalgupta46300-ui.github.io/gopalgupta/assets/Gopal.jpeg" alt="Gopal ji Gupta" width="220" height="220" />
-</p>
-
-<p align="center">
   <a href="https://gopalgupta46300-ui.github.io/gopalgupta/" target="_blank">
     <img src="https://img.shields.io/badge/Live%20Portfolio-Website-111827?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Portfolio" />
   </a>
@@ -21,7 +17,7 @@
 
 AI/ML Student • Data Analyst Aspirant • Problem Solver
 
-A modern personal portfolio website designed to present my work in AI/ML, data analysis, machine learning projects, and technical learning journey. This project is built as a responsive single-page experience with polished UI, strong branding, and quick access to my resume, social profiles, and contact options.
+A modern personal portfolio website designed to present my work in AI/ML, data analysis, machine learning projects, and technical learning journey. This project is built as a responsive single-page experience that highlights my skills, experience, and project work.
 
 ## 🌐 Live Demo
 
@@ -80,12 +76,6 @@ I am Gopal ji Gupta, a student pursuing Artificial Intelligence and Machine Lear
 - Portfolio sections for projects and achievements
 - Easy navigation with anchor links
 - Contact-ready interface for collaboration and opportunities
-
-## 📸 Preview
-
-<p align="center">
-  <img src="https://gopalgupta46300-ui.github.io/gopalgupta/assets/Gopal.jpeg" alt="Portfolio Profile" width="700" />
-</p>
 
 ## 🔗 Connect
 
