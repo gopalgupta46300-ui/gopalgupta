@@ -1,82 +1,116 @@
 # Gopal ji Gupta
 
-AI/ML Student • Data Enthusiast • Portfolio Website
-
-[![Live Website](https://img.shields.io/badge/Live-Portfolio%20Site-111827?style=for-the-badge&logo=githubpages&logoColor=white)](https://gopalgupta46300-ui.github.io/gopalgupta/)
-[![Resume](https://img.shields.io/badge/Resume-PDF-8B5E3C?style=for-the-badge)](https://gopalgupta46300-ui.github.io/gopalgupta/assets/Resume.pdf)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/gopal-gupta-a0a69a30a/)
-[![Email](https://img.shields.io/badge/Email-gopalgupta46300%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gopalgupta46300@gmail.com)
-
 <p align="center">
-  <img src="https://gopalgupta46300-ui.github.io/gopalgupta/assets/Gopal.jpeg" alt="Gopal ji Gupta" width="260" height="260" style="border-radius: 18px;" />
+  <img src="https://gopalgupta46300-ui.github.io/gopalgupta/assets/Gopal.jpeg" alt="Gopal ji Gupta" width="220" height="220" />
 </p>
 
-This repository contains my personal portfolio website built for showcasing my journey in AI/ML, data analytics, problem solving, and project work. The site is designed to be modern, responsive, and visually clean while presenting my skills, achievements, and contact information in an easy-to-navigate layout.
+<p align="center">
+  <a href="https://gopalgupta46300-ui.github.io/gopalgupta/" target="_blank">
+    <img src="https://img.shields.io/badge/Live%20Portfolio-Website-111827?style=for-the-badge&logo=githubpages&logoColor=white" alt="Live Portfolio" />
+  </a>
+  <a href="https://gopalgupta46300-ui.github.io/gopalgupta/assets/Resume.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/Resume-PDF-8B5E3C?style=for-the-badge" alt="Resume" />
+  </a>
+  <a href="https://www.linkedin.com/in/gopal-gupta-a0a69a30a/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" alt="LinkedIn" />
+  </a>
+  <a href="mailto:gopalgupta46300@gmail.com">
+    <img src="https://img.shields.io/badge/Email-gopalgupta46300%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+</p>
 
-## Live Demo
+AI/ML Student • Data Analyst Aspirant • Problem Solver
 
-- Website: https://gopalgupta46300-ui.github.io/gopalgupta/
+A modern personal portfolio website designed to present my work in AI/ML, data analysis, machine learning projects, and technical learning journey. This project is built as a responsive single-page experience with polished UI, strong branding, and quick access to my resume, social profiles, and contact options.
+
+## 🌐 Live Demo
+
+- Portfolio: https://gopalgupta46300-ui.github.io/gopalgupta/
 - Resume: https://gopalgupta46300-ui.github.io/gopalgupta/assets/Resume.pdf
 
-## About Me
+## 👨‍💻 About Me
 
-I am Gopal ji Gupta, an AI/ML student and aspiring Data Analyst with a focus on:
+I am Gopal ji Gupta, a student pursuing Artificial Intelligence and Machine Learning with a growing focus on:
 
 - Python and data-driven problem solving
 - SQL and data analysis workflows
 - Machine learning and AI concepts
-- Visualization and actionable insights
-- Building practical solutions from raw data
+- Visualization and insight generation
+- Practical, real-world application of analytical thinking
 
-## Highlights
+## ✨ Highlights
 
-- Modern single-page portfolio design
-- Responsive layout for desktop and mobile
-- Sections for About, Work, Skills, Experience, and Contact
-- Project and achievement showcase
-- Direct links to GitHub, LinkedIn, and email
-- Resume download section
+- Responsive portfolio layout for desktop and mobile
+- Sections for About, Projects, Skills, Experience, and Contact
+- Modern dark-and-gold visual identity
+- Resume download link
+- Social profile and email connectivity
 - Contact form integration
+- Smooth animations and polished transitions
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - HTML5
 - CSS3
 - JavaScript
 - Tailwind CSS
-- AOS animations
+- AOS (Animate On Scroll)
 - Swiper.js
-- Lucide icons
+- Lucide Icons
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 .
-├── index.html
-├── styles.css
-├── sciprt.js
 ├── assets/
 │   ├── Gopal.jpeg
 │   ├── Resume.pdf
 │   └── Gopal Gupta-Rm.pdf
+├── index.html
+├── styles.css
+├── sciprt.js
 ├── README.md
-└── .github/ (if present)
+└── .github/
 ```
 
-## Preview
+## 🧩 Features
 
-![Portfolio Preview](assets/Gopal.jpeg)
+- Professional personal branding
+- Clear presentation of technical interests and skills
+- Portfolio sections for projects and achievements
+- Easy navigation with anchor links
+- Contact-ready interface for collaboration and opportunities
 
-## Connect
+## 📸 Preview
+
+<p align="center">
+  <img src="https://gopalgupta46300-ui.github.io/gopalgupta/assets/Gopal.jpeg" alt="Portfolio Profile" width="700" />
+</p>
+
+## 🔗 Connect
 
 - GitHub: https://github.com/gopalgupta46300-ui
 - LinkedIn: https://www.linkedin.com/in/gopal-gupta-a0a69a30a/
 - Email: gopalgupta46300@gmail.com
 
-## License
+## 🚀 Getting Started
 
-This project is for personal portfolio use. Feel free to reuse the structure or design inspiration with proper attribution.
+Since this is a static portfolio site, you can run it locally by opening `index.html` in a browser.
+
+```bash
+# Clone the repository
+git clone https://github.com/gopalgupta46300-ui/gopalgupta.git
+
+# Open the file locally
+cd gopalgupta
+```
+
+Alternatively, you can simply use the GitHub Pages deployment link above.
+
+## 📜 License
+
+This project is a personal portfolio website created for showcasing professional work, skills, and learning journey. Feel free to adapt the structure or design inspiration with proper attribution.
 
 ---
 
-If you want, I can also make this README more premium, more professional, or more GitHub-style with badges, screenshots, and a polished project section.
+Built with care for a clean, modern, and professional portfolio experience.
