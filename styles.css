@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
 
-/* =========================================================
-   ROOT VARIABLES
-   ========================================================= */
-
 :root {
   --hof-charcoal: #111827;
   --hof-gold: #c79a3d;
@@ -14,14 +10,9 @@
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-menu: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-
   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
-/* =========================================================
-   BASE
-   ========================================================= */
 
 html {
   overflow-x: hidden;
@@ -37,10 +28,6 @@ body {
   outline: 2px solid var(--hof-gold);
   outline-offset: 3px;
 }
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
 
 #navbar {
   transition:
@@ -64,10 +51,6 @@ body {
   max-width: none;
   border-radius: 0;
 }
-
-/* =========================================================
-   HAMBURGER MENU
-   ========================================================= */
 
 #menu-toggle {
   width: 30px;
@@ -121,10 +104,6 @@ body {
   background-color: var(--hof-ivory);
 }
 
-/* =========================================================
-   FULL-SCREEN MOBILE MENU
-   ========================================================= */
-
 #menu-overlay {
   clip-path: circle(0% at calc(100% - 40px) 40px);
   transition: clip-path var(--transition-menu);
@@ -159,29 +138,10 @@ body {
 #menu-overlay.is-open nav a:nth-child(6) { transition-delay: 0.40s; }
 #menu-overlay.is-open nav > div { transition-delay: 0.45s; }
 
-/* =========================================================
-   MOBILE DROPDOWN
-   ========================================================= */
-
-#mobile-dropdown {
-  overflow: hidden;
-}
-
-#mobile-dropdown-toggle {
-  cursor: pointer;
-}
-
-#mobile-dropdown-toggle svg {
-  transition: transform var(--transition-base);
-}
-
-#mobile-dropdown-toggle.is-open svg {
-  transform: rotate(180deg);
-}
-
-/* =========================================================
-   PROJECT / COLLECTION SLIDER
-   ========================================================= */
+#mobile-dropdown { overflow: hidden; }
+#mobile-dropdown-toggle { cursor: pointer; }
+#mobile-dropdown-toggle svg { transition: transform var(--transition-base); }
+#mobile-dropdown-toggle.is-open svg { transform: rotate(180deg); }
 
 .collections-slider {
   position: relative;
@@ -244,10 +204,6 @@ body {
   }
 }
 
-/* =========================================================
-   PROJECT ARROWS
-   ========================================================= */
-
 .scroll-btn {
   position: absolute;
   top: 55%;
@@ -299,10 +255,6 @@ body {
   .right-btn { right: 0.75rem; }
 }
 
-/* =========================================================
-   FANCYBOX
-   ========================================================= */
-
 .fancybox-caption {
   background-color: rgba(17, 24, 39, 0.8);
   backdrop-filter: blur(5px);
@@ -313,10 +265,6 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
-
-/* =========================================================
-   MASONRY GALLERY
-   ========================================================= */
 
 .masonry-gallery {
   column-count: 1;
@@ -340,10 +288,6 @@ body {
 @media (min-width: 1024px) {
   .masonry-gallery { column-count: 3; }
 }
-
-/* =========================================================
-   LOGO SCROLLER
-   ========================================================= */
 
 .logo-scroller {
   position: relative;
@@ -374,22 +318,12 @@ body {
   to { transform: translate3d(-50%, 0, 0); }
 }
 
-/* =========================================================
-   IMAGE PERFORMANCE
-   ========================================================= */
-
-img {
-  max-width: 100%;
-}
+img { max-width: 100%; }
 
 .masonry-item img,
 .collections-slider img {
   display: block;
 }
-
-/* =========================================================
-   BUTTON / LINK INTERACTION
-   ========================================================= */
 
 a,
 button {
